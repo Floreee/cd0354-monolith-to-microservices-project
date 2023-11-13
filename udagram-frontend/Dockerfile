@@ -4,8 +4,7 @@ FROM beevelop/ionic:latest AS ionic
 WORKDIR /usr/src/app
 ## Install app dependencies
 ## A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./
-RUN pwd && ls -lah
+COPY package*.json /usr/src/app/
 RUN npm install
 ## Bundle app source
 COPY . .
